@@ -75,7 +75,11 @@ PEGAR
 
 
 ### PARTE B – Medición de Jitter y Shimmer 
-
+Filtros
+Jitter
+Shimmer
+Gráficas Jitter
+Gráficas Shimmer
 
 ### PARTE C – Comparación y conclusiones 
 
