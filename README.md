@@ -26,6 +26,7 @@ Para la captura de las señales de voz, se utilizó la aplicación móvil "MyRec
 
 
 
+
 ### PARTE B – Medición de Jitter y Shimmer 
 
 
