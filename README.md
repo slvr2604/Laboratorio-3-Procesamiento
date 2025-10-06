@@ -7,19 +7,35 @@ Durante este laboratorio se se realizó la grabación de señales de voz corresp
 
 A partir del espectro de cada señal, se identificaron y reportaron características acústicas como la intensidad, frecuencia media, entre otras; todo esto será comparado entre los distintos participantes, permitiendo observar variaciones interindividuales y posibles correlaciones con el género o la calidad vocal. El análisis se realizará mediante herramientas computacionales en Colab, empleando bibliotecas como NumPy, SciPy y Matplotlib para el procesamiento y visualización de datos.
 
-### PARTE A – Adquisición de las señales de voz   
+### PARTE A – Adquisición de las señales de voz  
 Para la captura de las señales de voz, se utilizó la aplicación móvil "MyRecorder", ya que permitía configurar la frecuencia de muestreo. Se estableció una frecuencia de 44 kHz, en cumplimiento del criterio de Nyquist, que indica que la frecuencia de muestreo debe ser al menos el doble de la frecuencia máxima. Dado que la banda audible del ser humano se encuentra aproximadamente entre 20 Hz y 20 kHz, se pusieron 44kHz. Posteriormente, se solicitó a tres hombres y tres mujeres que pronunciaran la misma frase. Las grabaciones fueron almacenadas inicialmente en formato MP4, luego se realizó la conversión a formato .WAV utilizando la plataforma en línea "FreeConvert", para poder subirlas al drive de Colab.  
 
 A continuación se va a mostrar la gráfica de cada grabación en dominio del tiempo y la Transformada de Fourier de cada señal con las respectivas gráficas de espectro de magnitudes frecuenciales.  
 
 ## Hombre 1:
+**Gráfica**  
+PEGAR 
+**Transformada de Fourier de cada señal y graficar su espectro de magnitudes frecuenciales.**
 
+## Hombre 2:
+**Gráfica**
+PEGAR
 
-Hombre 2:
-Hombre 3:
-Mujer 1:
-Mujer 2:
-Mujer 3:
+## Hombre 3:
+**Gráfica**
+PEEGAR
+
+## Mujer 1:  
+**Gráfica**
+PEGAR
+
+## Mujer 2:  
+**Gráfica**
+PEGAR
+
+## Mujer 3:  
+**Gráfica**
+PEGAR
 
 
 
