@@ -15,7 +15,14 @@ A continuación se va a mostrar la gráfica de cada grabación en dominio del ti
 ## Hombre 1:
 **Gráfica**  
 PEGAR 
-**Transformada de Fourier y espectro de magnitudes frecuenciales.**
+**Transformada de Fourier y espectro de magnitudes frecuenciales.**  
+Para la Transformada de Fourier se uso en todas las voces las siguientes líneas de código para
+    numero_puntos = len(datos_audio)
+    transformada_fft = fft(datos_audio)
+    frecuencias = fftfreq(numero_puntos, d=1/frecuencia_muestreo)
+    frecuencias_positivas = frecuencias[:numero_puntos//2]
+    magnitud_fft = np.abs(transformada_fft[:numero_puntos//2])
+A partir de esto se pudo graficar el espectro de magnitudes frecuenciales:
 <img width="1017" height="398" alt="image" src="https://github.com/user-attachments/assets/615212f5-7a63-4562-b137-0c65cc758ce0" />
 
 
