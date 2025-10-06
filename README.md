@@ -15,27 +15,46 @@ A continuación se va a mostrar la gráfica de cada grabación en dominio del ti
 ## Hombre 1:
 **Gráfica**  
 PEGAR 
-**Transformada de Fourier de cada señal y graficar su espectro de magnitudes frecuenciales.**
+**Transformada de Fourier y espectro de magnitudes frecuenciales.**
+<img width="1017" height="398" alt="image" src="https://github.com/user-attachments/assets/615212f5-7a63-4562-b137-0c65cc758ce0" />
+
 
 ## Hombre 2:
 **Gráfica**
-PEGAR
+PEGAR  
+**Transformada de Fourier y espectro de magnitudes frecuenciales.**
+<img width="1017" height="398" alt="image" src="https://github.com/user-attachments/assets/8de920a7-01ff-4d00-9d7b-abf1cb916b93" />
+
+
 
 ## Hombre 3:
 **Gráfica**
-PEEGAR
+PEEGAR  
+**Transformada de Fourier y espectro de magnitudes frecuenciales.**
+<img width="1017" height="398" alt="image" src="https://github.com/user-attachments/assets/f9fd11aa-5da7-4749-9466-bad1a6accf36" />
+
+
 
 ## Mujer 1:  
 **Gráfica**
-PEGAR
+PEGAR  
+**Transformada de Fourier y espectro de magnitudes frecuenciales.**
+<img width="1017" height="398" alt="image" src="https://github.com/user-attachments/assets/019b626d-f5e1-46c4-8748-74911d23c72f" />
+
 
 ## Mujer 2:  
 **Gráfica**
-PEGAR
+PEGAR  
+**Transformada de Fourier y espectro de magnitudes frecuenciales.**
+<img width="1017" height="398" alt="image" src="https://github.com/user-attachments/assets/1c0311e4-697e-49b8-b8ac-2697821cd696" />
+
 
 ## Mujer 3:  
 **Gráfica**
-PEGAR
+PEGAR  
+**Transformada de Fourier y espectro de magnitudes frecuenciales.**
+<img width="1017" height="398" alt="image" src="https://github.com/user-attachments/assets/ce257db0-1abc-42d8-bdfe-34958e770411" />
+
 
 
 
