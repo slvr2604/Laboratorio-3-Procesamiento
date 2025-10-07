@@ -26,6 +26,7 @@ Para la Transformada de Fourier se uso en todas las voces las siguientes líneas
     magnitud_fft = np.abs(transformada_fft[:numero_puntos//2])  
     
 A partir de esto se pudo graficar el espectro de magnitudes frecuenciales:  
+
     plt.figure(figsize=(12,4))
     plt.semilogx(frecuencias_positivas, 20*np.log10(magnitud_fft/np.max(magnitud_fft)), color='darkorange')
     plt.title("Espectro de magnitud ")
