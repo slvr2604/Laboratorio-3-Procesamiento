@@ -2,6 +2,9 @@
 Lina María Cortes Almonacid  
 María Alejandra Torres Cárdenas  
 Silvia Lorena Vargas Rueda    
+Para el desarrollo del laboratorio será de importancia tener presente el siguiente diagrama de flujo:
+
+![WhatsApp Image 2025-10-06 at 20 09 51](https://github.com/user-attachments/assets/55a8f93e-e769-4f60-b5ca-e01fad2b21c9)
 
 Durante este laboratorio se se realizó la grabación de señales de voz correspondientes a seis participantes, distribuidos equitativamente por género (tres mujeres y tres hombres), se obtuvieron registros acústicos que permitieran el análisis gráfico de las señales vocales, con el fin de calcular parámetros cuantitativos como Shimmer y Jitter. Estos indicadores son fundamentales para evaluar la estabilidad y variabilidad de la voz, y pueden ser utilizados en estudios clínicos, diagnósticos funcionales y caracterización de patrones. Además de dicho cálculo, este laboratorio contempla la aplicación de la Transformada de Fourier a cada una de las señales vocales registradas, con el fin de obtener y graficar su espectro de magnitudes frecuenciales. Este análisis espectral permite visualizar la distribución de energía en función de la frecuencia, facilitando la comparación entre voces masculinas y femeninas.  
 
@@ -346,7 +349,11 @@ El análisis del shimmer (picos de amplitud detectados), tanto absoluto como rel
 
 Los resultados obtenidos muestran que el jitter absoluto en la voz masculina es de 0.0019 s (≈23.86%), mientras que en la femenina es de 0.00095 s (≈19.13%). Esto muestra que las vibraciones de las cuerdas vocales femeninas son más regulares entre un ciclo y otro, lo que significa que la voz de las mujeres suele ser más estables y a su vez continuas, mientras que la voz de los hombres tiene irregularidades pequeñas que se puede reflejar como variaciones ligeras en el tono. 
 
-En las gráficas que observamos anteriormente, los picos rojos representan los puntos de máxima vibración. En las voces femeninas, estos picos tienen intervalos más uniformes y constantes, mientras que en las masculinas los picos son más separados y con alturas variables. Estas diferencias gráficas confirman los valores obtenidos de jitter y shimmer, reforzando la idea de que la voz femenina es más uniforme y la masculina más variable en su intensidad y frecuencia
+En las gráficas que observamos anteriormente, los picos rojos representan los puntos de máxima vibración. En las voces femeninas, estos picos tienen intervalos más uniformes y constantes, mientras que en las masculinas los picos son más separados y con alturas variables. Estas diferencias gráficas confirman los valores obtenidos de jitter y shimmer, reforzando la idea de que la voz femenina es más uniforme y la masculina más variable en su intensidad y frecuencia.
+Estas comparaciones pueden ser representadas gráficamente como: 
+
+<img width="1600" height="1062" alt="image" src="https://github.com/user-attachments/assets/905c693a-5771-49f9-81f5-9cc5807e2feb" />
+
 
 El jitter y el shimmer son parámetros acústicos que permiten cuantificar la estabilidad de la voz y detectar irregularidades en la vibración de las cuerdas vocales. El jitter mide las variaciones de frecuencia entre ciclos consecutivos, mientras que el shimmer mide las variaciones en la amplitud de esos mismos ciclos (Camargo et al., 2015). Estos indicadores son muy utilizados en el ámbito clínico porque ofrecen una forma objetiva de evaluar la calidad vocal y complementan la percepción subjetiva del especialista.
 
