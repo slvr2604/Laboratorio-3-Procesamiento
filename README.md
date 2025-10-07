@@ -165,7 +165,9 @@ Se midió el SNR para cada señal y para poder estimar la relación entre señal
 
 
 ### PARTE B – Medición de Jitter y Shimmer 
-Filtros
+
+Una vez obtenidas las grabaciones de las seis señales de voz, se seleccionaron dos de ellas, una correspondiente a un participante masculino y otra a un participante femenino con el propósito de realizar un análisis más detallado. Sobre estas señales se aplicó un filtro pasa banda, con el objetivo de eliminar componentes de ruido y conservar únicamente las frecuencias características del rango vocal de cada género.
+
 Jitter
 Shimmer
 Gráficas Jitter
