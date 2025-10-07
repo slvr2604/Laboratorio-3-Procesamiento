@@ -127,11 +127,11 @@ Se midió el SNR para cada señal y para poder estimar la relación entre señal
 
 **Transformada de Fourier y espectro de magnitudes frecuenciales.**
 <img width="1017" height="398" alt="image" src="https://github.com/user-attachments/assets/019b626d-f5e1-46c4-8748-74911d23c72f" />
-**Frecuencia fundamental:** 219.9 Hz
-**Frecuencia media:** 5457.8 Hz
-**Brillo espectral:** 0.6 
-**Energía total (intensidad):** 3198.715156
-**Relación Señal/Ruido (SNR):** 11.76 dB
+**Frecuencia fundamental:** 219.9 Hz  
+**Frecuencia media:** 5457.8 Hz  
+**Brillo espectral:** 0.6  
+**Energía total (intensidad):** 3198.715156  
+**Relación Señal/Ruido (SNR):** 11.76 dB  
 
 
 ## Mujer 2:  
