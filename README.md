@@ -38,6 +38,11 @@ A partir de esto se pudo graficar el espectro de magnitudes frecuenciales:
 
 <img width="1017" height="398" alt="image" src="https://github.com/user-attachments/assets/615212f5-7a63-4562-b137-0c65cc758ce0" />
 
+La **frecuencia fundamental (F₀)** es el componente de menor frecuencia con mayor energía en una señal periódica. En el caso de la voz humana, corresponde al tono base que percibimos al hablar o cantar, y sobre el cual se construyen los armónicos, los armonicos son como copias de esa frecuencia, pero más agudas. Por ejemplo, si la frecuencia fundamental es 100 Hz, los armónicos estarán en 200 Hz, 300 Hz, 400 Hz, y así sucesivamente. Estos sonidos no se escuchan como notas separadas, pero juntos le dan a la voz su timbre o color característico. Gracias a los armónicos, podemos distinguir una voz masculina de una femenina, o una flauta de un violín, aunque toquen la misma nota. La F₀ sirve para caracterizar el tipo de voz (masculina, femenina, infantil), detectar alteraciones fonatorias y realizar análisis acústicos clínicos o técnicos. Se midió así:  
+    indice_pico_principal = np.argmax(magnitud_fft)
+    frecuencia_fundamental = frecuencias_positivas[indice_pico_principal]  
+**Frecuencia fundamental: 381.8 Hz**  
+
 
 ## Hombre 2:
 **Gráfica**
@@ -107,3 +112,6 @@ Gráficas Shimmer
 ### Referencias
 - FreeConvert. (s.f.). Convertidor de MP4 a WAV en línea. Recuperado el 6 de octubre de 2025, de https://www.freeconvert.com/es/mp4-to-wav
 - Moore, B. C. J. (2012). An Introduction to the Psychology of Hearing (6th ed.). Brill, de https://brill.com/display/title/21354
+- Oppenheim, A. V., & Schafer, R. W. (2010). Discrete-Time Signal Processing (3rd ed.). Pearson Education. Recuperado de https://www.pearson.com/en-us/subject-catalog/p/discrete-time-signal-processing/P200000003760/9780131988422
+- Peeters, G. (2004). A large set of audio features for sound description (similarity and classification) in the CUIDADO project. IRCAM de https://recherche.ircam.fr/equipes/analysesynthese/peeters/ARTICLES/Peeters_2003_cuidadoaudiofeatures.pdf
+- 
