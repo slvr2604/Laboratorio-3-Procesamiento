@@ -277,6 +277,13 @@ Las voces masculinas presentan frecuencias fundamentales más bajas y menor bril
 
 
 
+El jitter y el shimmer son parámetros acústicos que permiten cuantificar la estabilidad de la voz y detectar irregularidades en la vibración de las cuerdas vocales. El jitter mide las variaciones de frecuencia entre ciclos consecutivos, mientras que el shimmer mide las variaciones en la amplitud de esos mismos ciclos (Camargo et al., 2015). Estos indicadores son muy utilizados en el ámbito clínico porque ofrecen una forma objetiva de evaluar la calidad vocal y complementan la percepción subjetiva del especialista.
+
+Cuando los valores de jitter y shimmer son altos, pueden indicar alteraciones en la función vocal o la presencia de lesiones estructurales en la laringe. Diversos estudios han encontrado que los pacientes con nódulos, pólipos, disfonías o enfermedades neurológicas presentan niveles significativamente mayores de jitter y shimmer en comparación con personas con voces normales (Cordeiro et al., 2021; Fang et al., 2021). Por esta razón, estos parámetros se utilizan como herramientas diagnósticas en la práctica clínica, permitiendo detectar disfunciones laríngeas y monitorear la evolución de los tratamientos de rehabilitación vocal.
+
+Además, investigaciones recientes muestran que existe una relación entre el incremento del jitter y shimmer y una percepción auditiva de voz más áspera o con soplo, lo cual refuerza su utilidad para validar observaciones (Cordeiro et al., 2021). Por otro lado, también se ha reportado que los valores pueden verse afectados por factores externos como el entorno de grabación, el nivel de intensidad, el tipo de fonema o el ruido ambiental (Arias-Londoño et al., 2023). Por ello, se recomienda interpretar estas medidas junto con otros parámetros acústicos como la relación armónico-ruido.
+
+
 
 
 
@@ -294,4 +301,7 @@ Las voces masculinas presentan frecuencias fundamentales más bajas y menor bril
 - Oppenheim, A. V., & Schafer, R. W. (2010). Discrete-Time Signal Processing (3rd ed.). Pearson Education. Recuperado de https://www.pearson.com/en-us/subject-catalog/p/discrete-time-signal-processing/P200000003760/9780131988422
 - Peeters, G. (2004). A large set of audio features for sound description (similarity and classification) in the CUIDADO project. IRCAM de https://recherche.ircam.fr/equipes/analysesynthese/peeters/ARTICLES/Peeters_2003_cuidadoaudiofeatures.pdf
 - Boersma, P., & Weenink, D. (2023). Praat: Doing phonetics by computer [Computer program]. Version 6.3. https://www.fon.hum.uva.nl/praat/
-- 
+- Arias-Londoño, J. D., Gómez-García, J. A., & Godino-Llorente, J. I. (2023). Acoustic measures for voice pathologies: A review of reliability and clinical relevance. Applied Sciences, 13(2), 941. https://doi.org/10.3390/app13020941
+- Camargo, Z., Cordeiro, A., & Behlau, M. (2015). Analysis of fundamental frequency, jitter, shimmer, and vocal intensity in women with and without voice disorders. Brazilian Journal of Otorhinolaryngology, 81(5), 526–532. https://doi.org/10.1016/j.bjorl.2015.07.011
+- Cordeiro, A., Behlau, M., & Oliveira, G. (2021). Acoustic and perceptual analysis of voice in patients with benign laryngeal lesions. International Archives of Communication Disorder, 3(14). https://clinmedjournals.org/articles/iacod/international-archives-of-communication-disorder-iacod-3-014.php
+- Fang, Q., Zhang, H., & Zheng, Y. (2021). Clinical application of acoustic parameters jitter and shimmer in the evaluation of vocal fold pathology. Annals of Palliative Medicine, 10(6), 6574–6582. https://doi.org/10.21037/apm-21-1048
