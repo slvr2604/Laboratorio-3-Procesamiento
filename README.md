@@ -201,13 +201,67 @@ En la Figura se observan las formas de onda correspondientes a las grabaciones d
 El fragmento temporal de 0.3 segundos permite evidenciar con mayor claridad las variaciones de amplitud y la estructura cíclica de la señal. Tras aplicar el filtro, se observa una atenuación de componentes de alta frecuencia y ruido, lo que mejora la visualización del patrón periódico fundamental. En la señal masculina, el filtrado conserva oscilaciones más espaciadas, lo que sugiere una frecuencia fundamental menor, mientras que en la voz femenina las oscilaciones son más densas, lo que indica una frecuencia fundamental mayor.
 
 
+Cuando calculamos el jitter absoluto y relativo, tenemos en cuenta las siguientes fórmulas: 
+<img width="442" height="110" alt="image" src="https://github.com/user-attachments/assets/16d6624d-b4da-4fe7-b538-9a2c5129ebd8" />
+<img width="486" height="108" alt="image" src="https://github.com/user-attachments/assets/c6bcc8eb-ffc6-42c8-b32d-c39ecb099ce3" />
 
-Jitter
-Shimmer
-Gráficas Jitter
-Gráficas Shimmer
+Y las adaptamos al código para calcularlo de la siguiente forma: 
 
 
+```
+peaks_h, _ = find_peaks(filtro_h, height=0, distance=fs_h//200)
+peaks_m, _ = find_peaks(filtro_m, height=0, distance=fs_m//300)
+
+# cálculo de los periodos Ti
+Ti_h = np.diff(peaks_h) / fs_h
+Ti_m = np.diff(peaks_m) / fs_m
+
+# jitter absoluto
+JitterAbs_h = np.mean(np.abs(np.diff(Ti_h)))
+JitterAbs_m = np.mean(np.abs(np.diff(Ti_m)))
+
+# jitter relativo (%)
+JitterRel_h = (JitterAbs_h / np.mean(Ti_h)) * 100
+JitterRel_m = (JitterAbs_m / np.mean(Ti_m)) * 100
+```
+
+
+Cuando observamos `peaks_h` y `peaks_m` son para detectar máximos locales, es decir los puntos más altos de la señal. `height = 0` detecta los picos mayores a cero y `distance = fs_h/200` limita la distancia entre los picos.
+Para el cálculo de los periodos Ti se calcula la diferencia en muestras entre picos consecutivos, que son el número de muestras que dura cada ciclo, y lo divide entre la frecuencia de muestreo.
+En el jitter absoluto `np.diff(Ti_h) ` mide las diferencias entre los periodos sucesivos `np.abs()` toma el valor absoluto y `np.mean() ` saca el promedio de esas variaciones.
+Y cuando observamos los porcentajes de jitter absoluto y relativo y los picos detectados de las gráficas podemos concluir que:
+Los porcentajes de jitter indican que la voz masculina presenta una mayor variabilidad temporal entre los periodos de vibración de las cuerdas vocales que la voz femenina.
+La voz del hombre tiene un Jitter ligeramente superior, lo que sugiere mayor irregularidad en la frecuencia de vibración, mientras que la voz de la mujer, con un Jitter menor, esta muestra una frecuencia fundamental más estable, es decir, los ciclos de vibración son más regulares en el tiempo.
+Si nos enfocamos en las gráficas de los picos:
+ <img width="886" height="404" alt="image" src="https://github.com/user-attachments/assets/3dabd1a6-2e1c-4107-9397-ef0d97706536" />
+<img width="886" height="404" alt="image" src="https://github.com/user-attachments/assets/d66ce73d-ca20-4dbb-a3a9-7ea099f78c63" />
+
+En los picos de la voz del hombre los picos se distribuyen con una separación bastante regular, lo que indica que el periodo de vibración (T_i) es constante. Esto indica que la frecuencia fundamental se mantiene estable en el tiempo. La variación de los picos es leve, por lo que el Jitter relativo es bajo o moderado. Y en la gráfica se observa una señal más uniforme y menos afectada por variaciones rápidas, lo que sugiere buena calidad vocal y menor tensión o fatiga en la voz.
+En los picos de la voz femenina los picos sucesivos presentan ligeras variaciones en la separación, lo que indica que los periodos T_icambian de forma más notoria. Esto nos muestra un mayor Jitter, reflejando una frecuencia fundamental menos estable. Esto puede ocurrir porque las voces femeninas suelen tener una frecuencia más alta, lo que hace que el jitter pueda verse más pronunciado.
+Si continuamos al cálculo del shimmer absoluto y relativo, tenemos en cuenta las siguientes fórmulas:
+
+ <img width="472" height="103" alt="image" src="https://github.com/user-attachments/assets/7b1212a6-abb0-46de-a48d-5d619641225a" />
+<img width="520" height="88" alt="image" src="https://github.com/user-attachments/assets/cf883047-3ae0-4325-8ff0-914c0b561fde" />
+
+Y las adaptamos a los datos obtenidos anteriormente para poder calcularlas. El código que la representa es:
+
+```
+# Shimmer absoluto
+ShimmerAbs_h = np.mean(np.abs(np.diff(A_h)))
+ShimmerAbs_m = np.mean(np.abs(np.diff(A_m)))
+# Shimmer relativo (%)
+ShimmerRel_h = (ShimmerAbs_h / np.mean(A_h)) * 100
+ShimmerRel_m = (ShimmerAbs_m / np.mean(A_m)) * 100
+```
+
+Previamente hemos calculado los picos de amplitud, con esos picos obtenemos las amplitudes de cada ciclo que se declaran como `A_h` y `A_m`. `np.diff(A_h)` calcula la diferencia entre variaciones es decir Ai+1-Ai `np.abs` toma el valor absoluto de los valores y `np,mean` hace el promedio de las diferencias absolutas, lo que nos permite calcular el shimmer absoluto.
+Y para el relativo, se normaliza el shimmer absoluto respecto al promedio de la amplitud y se multiplica por 100, lo que nos da el porcentaje que indica que tanto varía la amplitud en relación al promedio de la señal. Y se procede a hacer la gráfica de los picos.
+<img width="886" height="404" alt="image" src="https://github.com/user-attachments/assets/93f17fa0-09eb-4256-86bc-e3f9a5263740" />
+<img width="886" height="404" alt="image" src="https://github.com/user-attachments/assets/e1593952-4bf5-4a15-b0e0-f0c96ef88148" />
+
+Ahora, cuando hablamos de los picos de amplitud AI encontramos que la voz masculina presenta un shimmer más alto (33.73%), lo que indica mayores variaciones en la amplitud entre ciclos consecutivos. Y podríamos atribuirlo a que las voces masculinas, al tener una frecuencia fundamental más baja, presentan ciclos más largos y por tanto una mayor susceptibilidad a fluctuaciones en la energía de emisión. La voz femenina tiene un shimmer menor (20.89%), lo que refleja una mayor estabilidad en la intensidad de la señal. Esto porque las voces femeninas suelen ser más agudas y con menor energía en bajas frecuencias, lo que reduce las variaciones de amplitud perceptibles.
+Y cuando analizamos las gráficas de los picos de amplitud encontramos que, en la gráfica del hombre, los picos azules presentan una dispersión más irregular. Se observa que la amplitud de los picos varía notablemente a lo largo del tiempo, lo que confirma el valor alto del shimmer calculado. En la voz femenina los picos son más uniformes y constantes, con menor dispersión vertical. Esto coincide con un shimmer más bajo, indicando una señal más estable y con menos fluctuaciones de energía entre ciclos. 
+ 
 Luego  se implementó un código en Colab que permite automatizar el cálculo del jitter y shimmer para las seis grabaciones de voz (tres masculinas y tres femeninas). El programa utiliza la función wavfile.read del módulo scipy.io para importar las señales en formato .wav, asegurando que cada archivo sea procesado con su respectiva frecuencia de muestreo. Posteriormente, se emplea la función find_peaks de scipy.signal para detectar los máximos locales en la señal de voz, lo que permite identificar los ciclos glotales necesarios para calcular las variaciones temporales y de amplitud.
 
 
@@ -275,7 +329,13 @@ La **frecuencia fundamental (F₀)** fue consistentemente más baja en las voces
 
 Las voces masculinas presentan frecuencias fundamentales más bajas y menor brillo espectral, lo que les otorga un timbre más grave y opaco. Las voces femeninas muestran frecuencias fundamentales y medias más altas, con mayor energía en los agudos, lo que produce un timbre más brillante y claro. La intensidad y la relación señal/ruido no dependen directamente del género, sino de factores como el esfuerzo fonatorio, la proyección vocal y las condiciones de la grabación.
 
+Al analizar las señales de voz (gráfica de picos sucesivos detectados para voz masculina y femenina), se observa que en las grabaciones femeninas los picos aparecen con mayor frecuencia dentro del mismo intervalo de tiempo, en comparación con las masculinas. Esto refleja que las cuerdas vocales de las mujeres vibran más rápido, lo cual coincide con lo descrito en estudios fisiológicos: al ser más cortas y delgadas, producen tonos más agudos o frecuencias fundamentales más altas.
 
+El análisis del shimmer (picos de amplitud detectados), tanto absoluto como relativo, nos permite identificar las variaciones en la amplitud de las ondas. Esto nos permite encontrar que la voz masculina suele presentar mayores cambios, probablemente porque hay una diferencia de presión en el aire que proviene de los pulmones, esto se resume en que la voz de los hombres tiende a sonar más fuertes, pero con cierta inestabilidad en el nivel de energía.
+
+Los resultados obtenidos muestran que el jitter absoluto en la voz masculina es de 0.0019 s (≈23.86%), mientras que en la femenina es de 0.00095 s (≈19.13%). Esto muestra que las vibraciones de las cuerdas vocales femeninas son más regulares entre un ciclo y otro, lo que significa que la voz de las mujeres suele ser más estables y a su vez continuas, mientras que la voz de los hombres tiene irregularidades pequeñas que se puede reflejar como variaciones ligeras en el tono. 
+
+En las gráficas que observamos anteriormente, los picos rojos representan los puntos de máxima vibración. En las voces femeninas, estos picos tienen intervalos más uniformes y constantes, mientras que en las masculinas los picos son más separados y con alturas variables. Estas diferencias gráficas confirman los valores obtenidos de jitter y shimmer, reforzando la idea de que la voz femenina es más uniforme y la masculina más variable en su intensidad y frecuencia
 
 El jitter y el shimmer son parámetros acústicos que permiten cuantificar la estabilidad de la voz y detectar irregularidades en la vibración de las cuerdas vocales. El jitter mide las variaciones de frecuencia entre ciclos consecutivos, mientras que el shimmer mide las variaciones en la amplitud de esos mismos ciclos (Camargo et al., 2015). Estos indicadores son muy utilizados en el ámbito clínico porque ofrecen una forma objetiva de evaluar la calidad vocal y complementan la percepción subjetiva del especialista.
 
