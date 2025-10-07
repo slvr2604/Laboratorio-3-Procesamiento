@@ -160,23 +160,6 @@ Se midió el SNR para cada señal y para poder estimar la relación entre señal
 **Relación Señal/Ruido (SNR):** 8.05 dB  
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ### PARTE B – Medición de Jitter y Shimmer 
 Filtros
 Jitter
@@ -184,7 +167,10 @@ Shimmer
 Gráficas Jitter
 Gráficas Shimmer
 
-### PARTE C – Comparación y conclusiones 
+### PARTE C – Comparación y conclusiones  
+
+En este análisis comparativo entre voces masculinas y femeninas se evidenciaron diferencias claras en varios parámetros espectrales. En primer lugar, la frecuencia fundamental fue más baja en las voces masculinas, con valores que oscilaron entre 90 y 210 Hz, mientras que en las voces femeninas los valores estuvieron entre 200 y 420 Hz. Este resultado coincide con las diferencias fisiológicas entre hombres y mujeres, ya que las cuerdas vocales masculinas suelen ser más largas y gruesas, generando tonos más graves, mientras que en las femeninas son más cortas y delgadas, produciendo sonidos más agudos.
+
 
 
 ### Referencias
