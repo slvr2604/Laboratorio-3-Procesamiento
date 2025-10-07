@@ -13,8 +13,10 @@ Para la captura de las señales de voz, se utilizó la aplicación móvil "MyRec
 A continuación se va a mostrar la gráfica de cada grabación en dominio del tiempo y la Transformada de Fourier de cada señal con las respectivas gráficas de espectro de magnitudes frecuenciales.  
 
 ## Hombre 1:
-**Gráfica**  
-PEGAR 
+**Gráfica en el dominio tiempo** 
+
+<img width="1021" height="393" alt="image" src="https://github.com/user-attachments/assets/9a793506-c952-44d4-83a4-b41b4dfdcafe" />
+
 **Transformada de Fourier y espectro de magnitudes frecuenciales.**  
 La Transformada de Fourier (TF) es una herramienta matemática fundamental que permite descomponer una señal temporal en sus componentes frecuenciales. En el contexto del procesamiento de voz, su aplicación permite identificar qué frecuencias están presentes en una señal vocal y con qué intensidad. Al aplicar la TF a una señal de voz, se obtiene su espectro de magnitudes frecuenciales, el cual representa la distribución de energía en función de la frecuencia. Este espectro permite visualizar los armónicos, la frecuencia fundamental y otros componentes relevantes del timbre vocal.
 Para la Transformada de Fourier se uso en todas las voces las siguientes líneas de código:  
@@ -69,42 +71,59 @@ La **intensidad** es un parámetro que representa la cantidad total de energía 
 
 **Energía total (intensidad):** 2392.245868  
 
+Se midió el SNR para cada señal y para poder estimar la relación entre señal útil y ruido en cada grabación, se implementó un cálculo del SNR en decibelios. Se definió un umbral de ruido equivalente al 10 % del valor máximo absoluto de la señal, lo que permite separar las muestras con energía significativa (parte señal) de aquellas consideradas ruido de fondo (parte ruido). A partir de esta segmentación, se calculó la energía de cada componente y se aplicó la fórmula clásica del SNR en dB:  
+    umbral_ruido = 0.1 * np.max(np.abs(datos_audio))
+    parte_senal = datos_audio[np.abs(datos_audio) >= umbral_ruido]
+    parte_ruido = datos_audio[np.abs(datos_audio) < umbral_ruido]
+    energia_senal = np.sum(parte_senal**2)
+    energia_ruido = np.sum(parte_ruido **2)
+    SNR_dB = 10 * np.log10(energia_senal / energia_ruido)  
+    
+**Relación Señal/Ruido (SNR):** 8.05 dB
+
+
+
 
 
 
 ## Hombre 2:
-**Gráfica**
-PEGAR  
+**Gráfica en el dominio tiempo**
+<img width="1021" height="393" alt="image" src="https://github.com/user-attachments/assets/ac71d54a-483c-4184-bca3-e89e52f59397" />
+
 **Transformada de Fourier y espectro de magnitudes frecuenciales.**
 <img width="1017" height="398" alt="image" src="https://github.com/user-attachments/assets/8de920a7-01ff-4d00-9d7b-abf1cb916b93" />
 
 
 
 ## Hombre 3:
-**Gráfica**
-PEEGAR  
+**Gráfica en el dominio tiempo**
+<img width="1021" height="393" alt="image" src="https://github.com/user-attachments/assets/323fb4c9-997b-4d93-b82b-22c8e107a75a" />
+
 **Transformada de Fourier y espectro de magnitudes frecuenciales.**
 <img width="1017" height="398" alt="image" src="https://github.com/user-attachments/assets/f9fd11aa-5da7-4749-9466-bad1a6accf36" />
 
 
 
 ## Mujer 1:  
-**Gráfica**
-PEGAR  
+**Gráfica en el dominio tiempo**
+<img width="1021" height="393" alt="image" src="https://github.com/user-attachments/assets/73f94198-b428-415f-8620-dcfbf0871283" />
+
 **Transformada de Fourier y espectro de magnitudes frecuenciales.**
 <img width="1017" height="398" alt="image" src="https://github.com/user-attachments/assets/019b626d-f5e1-46c4-8748-74911d23c72f" />
 
 
 ## Mujer 2:  
-**Gráfica**
-PEGAR  
+**Gráfica en el dominio tiempo**
+<img width="1021" height="393" alt="image" src="https://github.com/user-attachments/assets/4835d52f-fe8b-47b6-a8d0-d2fe897b96c3" />
+  
 **Transformada de Fourier y espectro de magnitudes frecuenciales.**
 <img width="1017" height="398" alt="image" src="https://github.com/user-attachments/assets/1c0311e4-697e-49b8-b8ac-2697821cd696" />
 
 
 ## Mujer 3:  
-**Gráfica**
-PEGAR  
+**Gráfica en el dominio tiempo**
+<img width="1021" height="393" alt="image" src="https://github.com/user-attachments/assets/fda830b0-441a-4b4c-a346-23ced04ef648" />
+  
 **Transformada de Fourier y espectro de magnitudes frecuenciales.**
 <img width="1017" height="398" alt="image" src="https://github.com/user-attachments/assets/ce257db0-1abc-42d8-bdfe-34958e770411" />
 
