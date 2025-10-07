@@ -49,7 +49,20 @@ La **frecuencia media** es un parámetro que se calcula tomando en cuenta cuánt
 
     frecuencia_media = np.sum(frecuencias_positivas * magnitud_fft) / np.sum(magnitud_fft)  
     
-**Frecuencia media: 4512.8 Hz**
+**Frecuencia media:** 4512.8 Hz  
+
+El**brillo espectral** es un parámetro que mide cuánta energía hay en las frecuencias altas respecto al total, lo cual resulta útil en el análisis de voz para evaluar qué tan clara, aguda o “brillante” suena una grabación. Su cálculo se basa en la proporción de energía ubicada por encima de un umbral de frecuencia, que en este caso se fijó en 2000 Hz. Según estudios acústicos, dicho umbral puede variar entre 1500 y 3000 Hz dependiendo del tipo de voz y el objetivo fonético del análisis. Dado que en este estudio se incluyeron voces masculinas y femeninas, se adoptó el valor de 2000 Hz como referencia intermedia. Un valor alto de brillo (cercano a 1) indica una voz clara y aguda, con predominancia de frecuencias altas, común en voces femeninas o infantiles; mientras que un valor bajo (cercano a 0) refleja una voz más grave u opaca, con mayor concentración de energía en frecuencias bajas, como suele observarse en voces masculinas o roncas.  
+
+En resumen, si el valor es alto (por ejemplo, 0.6 o más), decimos que la señal es “brillante”. Si es bajo (0.2 o menos), la señal es más grave o apagada.  
+
+    f_umbral = 2000 
+    energia_total = np.sum(magnitud_fft)
+    energia_alta = np.sum(magnitud_fft[frecuencias_positivas > f_umbral])
+    brillo_espectral = energia_alta / energia_total  
+
+**Brillo espectral:** 0.5  
+
+La **intensidad** 
 
 
 
@@ -123,4 +136,5 @@ Gráficas Shimmer
 - Moore, B. C. J. (2012). An Introduction to the Psychology of Hearing (6th ed.). Brill, de https://brill.com/display/title/21354
 - Oppenheim, A. V., & Schafer, R. W. (2010). Discrete-Time Signal Processing (3rd ed.). Pearson Education. Recuperado de https://www.pearson.com/en-us/subject-catalog/p/discrete-time-signal-processing/P200000003760/9780131988422
 - Peeters, G. (2004). A large set of audio features for sound description (similarity and classification) in the CUIDADO project. IRCAM de https://recherche.ircam.fr/equipes/analysesynthese/peeters/ARTICLES/Peeters_2003_cuidadoaudiofeatures.pdf
+- Boersma, P., & Weenink, D. (2023). Praat: Doing phonetics by computer [Computer program]. Version 6.3. https://www.fon.hum.uva.nl/praat/
 - 
