@@ -192,9 +192,13 @@ Una vez obtenidas las grabaciones de las seis señales de voz, se seleccionaron 
     filtro_m = bandpass_filter(sig_m, fs_m, 150, 500)
 
 
-El código implementado en Python permitió realizar todo el procesamiento descrito de manera estructurada. Se definió una función de filtrado pasa banda basada en la librería scipy.signal mediante el método de Butterworth en formato sos, garantizando estabilidad numérica. Además, se implementó una función auxiliar para extraer un fragmento central de duración controlada, con el fin de analizar un tramo representativo sin bordes ruidosos. Finalmente, las gráficas se generaron con matplotlib, permitiendo comparar visualmente las señales originales y filtradas, y evidenciar el efecto del preprocesamiento sobre las características espectrales de la voz.
+El código implementado en Colab permitió realizar todo el procesamiento descrito de manera estructurada. Se definió una función de filtrado pasa banda basada en la librería scipy.signal mediante el método de Butterworth en formato sos, garantizando estabilidad numérica. Además, se implementó una función auxiliar para extraer un fragmento central de duración controlada, con el fin de analizar un tramo representativo sin bordes ruidosos. Finalmente, las gráficas se generaron con matplotlib, permitiendo comparar visualmente las señales originales y filtradas, y evidenciar el efecto del preprocesamiento sobre las características espectrales de la voz.
 
 <img width="1189" height="789" alt="image" src="https://github.com/user-attachments/assets/8da9a113-850a-42d0-b5b4-113318ad9b15" />
+
+En la Figura se observan las formas de onda correspondientes a las grabaciones de voz masculina y femenina, tanto en su versión original como después de aplicar el filtrado pasa banda. Para la voz masculina se utilizó un filtro de segundo orden con un rango de paso entre 80 y 400 Hz, mientras que para la voz femenina se empleó un filtro con un rango de 150 a 500 Hz, de acuerdo con los valores típicos del rango fundamental de cada género. En ambas señales se aprecia un comportamiento periódico característico de la vibración de las cuerdas vocales, con amplitudes mayores en los segmentos activos de fonación y menor energía en los intervalos de silencio.
+
+El fragmento temporal de 0.3 segundos permite evidenciar con mayor claridad las variaciones de amplitud y la estructura cíclica de la señal. Tras aplicar el filtro, se observa una atenuación de componentes de alta frecuencia y ruido, lo que mejora la visualización del patrón periódico fundamental. En la señal masculina, el filtrado conserva oscilaciones más espaciadas, lo que sugiere una frecuencia fundamental menor, mientras que en la voz femenina las oscilaciones son más densas, lo que indica una frecuencia fundamental mayor.
 
 
 
@@ -202,6 +206,54 @@ Jitter
 Shimmer
 Gráficas Jitter
 Gráficas Shimmer
+
+
+Luego  se implementó un código en Colab que permite automatizar el cálculo del jitter y shimmer para las seis grabaciones de voz (tres masculinas y tres femeninas). El programa utiliza la función wavfile.read del módulo scipy.io para importar las señales en formato .wav, asegurando que cada archivo sea procesado con su respectiva frecuencia de muestreo. Posteriormente, se emplea la función find_peaks de scipy.signal para detectar los máximos locales en la señal de voz, lo que permite identificar los ciclos glotales necesarios para calcular las variaciones temporales y de amplitud.
+
+
+    def calcular_jitter_shimmer(archivo):
+    fs, voz = wavfile.read(archivo)
+
+   
+    peaks, _ = find_peaks(voz, height=0, distance=fs//200)
+    periodos = np.diff(peaks) / fs       # tiempo entre picos
+    amplitudes = voz[peaks]              # amplitudes de los picos
+
+  
+    jitter_val = np.mean(np.abs(np.diff(periodos))) / np.mean(periodos) * 100
+    shimmer_val = np.mean(np.abs(np.diff(amplitudes))) / np.mean(amplitudes) * 100
+
+    return jitter_val, shimmer_val
+
+
+    resultados_hombres = [calcular_jitter_shimmer(f) for f in archivos_hombres]
+    resultados_mujeres = [calcular_jitter_shimmer(f) for f in archivos_mujeres]
+
+    
+El jitter se calculó como el promedio relativo de las diferencias entre los periodos consecutivos (T_i), mientras que el shimmer se obtuvo a partir de las variaciones en las amplitudes de los picos (A_i). Este procedimiento se encapsuló en una función llamada calcular_jitter_shimmer, que recibe cada archivo como entrada y devuelve ambos valores porcentuales. De esta manera, se logró estandarizar el proceso para todos los participantes y facilitar la comparación entre los resultados.
+
+
+Valores de Jitter y Shimmer 
+
+Hombre 1: Jitter = 20.24%, Shimmer = 27.83%
+
+Hombre 2: Jitter = 18.81%, Shimmer = 22.86%
+
+Hombre 3: Jitter = 27.18%, Shimmer = 65.59%
+
+Mujer 1: Jitter = 28.50%, Shimmer = 38.66%
+
+Mujer 2: Jitter = 22.15%, Shimmer = 38.03%
+
+Mujer 3: Jitter = 20.50%, Shimmer = 33.43%
+
+
+
+Los valores obtenidos muestran una notable variabilidad entre las grabaciones. En las voces masculinas, el jitter osciló entre 18.81 % y 27.18 %, mientras que en las voces femeninas varió entre 20.50 % y 28.50 %. Los resultados de shimmer también presentaron valores elevados, desde 22.86 % hasta 65.59 % en hombres y de 33.43 % a 38.66 % en mujeres. Estos valores superan ampliamente los rangos típicos de voces fisiológicamente estables (=1 % para jitter y =3–5 % para shimmer), lo que indica una inestabilidad considerable tanto en la frecuencia como en la amplitud de las señales registradas.
+
+Las diferencias observadas entre individuos y géneros pueden deberse a factores anatómicos (mayor frecuencia fundamental en mujeres, menor en hombres), pero también a condiciones experimentales como ruido de fondo, saturación o variaciones en la intensidad de fonación. En conjunto, el código permitió evidenciar que, aunque la metodología de detección de picos es efectiva para estimar estos parámetros, los valores obtenidos sugieren la necesidad de un mayor control en las condiciones de grabación para obtener medidas más representativas del comportamiento fisiológico de la voz.
+
+
 
 ### PARTE C – Comparación, análisis y conclusiones  
 Los datos obtenidos de las grabaciones de voz permitieron estudiar y comparar diferentes características entre hombres y mujeres. Para ello no solo se tuvieron en cuenta parámetros generales como la frecuencia fundamental, la frecuencia media, el brillo espectral, la intensidad y la relación señal/ruido, sino también medidas más específicas como el jitter y el shimmer, que reflejan la estabilidad de la voz en cuanto a frecuencia y amplitud. Con todos estos resultados es posible observar cómo varían las voces en términos de tono, claridad y regularidad, y así realizar una comparación más completa entre las muestras analizadas.  
