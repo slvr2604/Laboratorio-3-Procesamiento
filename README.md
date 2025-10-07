@@ -16,13 +16,25 @@ A continuación se va a mostrar la gráfica de cada grabación en dominio del ti
 **Gráfica**  
 PEGAR 
 **Transformada de Fourier y espectro de magnitudes frecuenciales.**  
-Para la Transformada de Fourier se uso en todas las voces las siguientes líneas de código para
+La Transformada de Fourier (TF) es una herramienta matemática fundamental que permite descomponer una señal temporal en sus componentes frecuenciales. En el contexto del procesamiento de voz, su aplicación permite identificar qué frecuencias están presentes en una señal vocal y con qué intensidad. Al aplicar la TF a una señal de voz, se obtiene su espectro de magnitudes frecuenciales, el cual representa la distribución de energía en función de la frecuencia. Este espectro permite visualizar los armónicos, la frecuencia fundamental y otros componentes relevantes del timbre vocal.
+Para la Transformada de Fourier se uso en todas las voces las siguientes líneas de código:  
+
     numero_puntos = len(datos_audio)
     transformada_fft = fft(datos_audio)
     frecuencias = fftfreq(numero_puntos, d=1/frecuencia_muestreo)
     frecuencias_positivas = frecuencias[:numero_puntos//2]
-    magnitud_fft = np.abs(transformada_fft[:numero_puntos//2])
-A partir de esto se pudo graficar el espectro de magnitudes frecuenciales:
+    magnitud_fft = np.abs(transformada_fft[:numero_puntos//2])  
+    
+A partir de esto se pudo graficar el espectro de magnitudes frecuenciales:  
+    plt.figure(figsize=(12,4))
+    plt.semilogx(frecuencias_positivas, 20*np.log10(magnitud_fft/np.max(magnitud_fft)), color='darkorange')
+    plt.title("Espectro de magnitud ")
+    plt.xlabel("Frecuencia [Hz]")
+    plt.ylabel("Magnitud [dB]")
+    plt.xlim(20, 20000)
+    plt.grid(True)
+    plt.show()
+
 <img width="1017" height="398" alt="image" src="https://github.com/user-attachments/assets/615212f5-7a63-4562-b137-0c65cc758ce0" />
 
 
