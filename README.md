@@ -8,8 +8,7 @@ Durante este laboratorio se se realizó la grabación de señales de voz corresp
 A partir del espectro de cada señal, se identificaron y reportaron características acústicas como la intensidad, frecuencia media, entre otras; todo esto será comparado entre los distintos participantes, permitiendo observar variaciones interindividuales y posibles correlaciones con el género o la calidad vocal. El análisis se realizará mediante herramientas computacionales en Colab, empleando bibliotecas como NumPy, SciPy y Matplotlib para el procesamiento y visualización de datos.  
 
 ### Diagrama de flujo
-Primero hicimos un diagrama de flujo para organizar la programación que se haría, así como el procedimiento:  
-IMAGEN
+Como primera etapa, se elaboró un diagrama de flujo que permitió estructurar tanto la programación como el procedimiento general del análisis. Esta herramienta facilitó la organización lógica de las tareas, definiendo el orden de ejecución, las funciones necesarias y los criterios de procesamiento que se aplicarían a las señales vocales.   
 
 ### PARTE A – Adquisición de las señales de voz  
 Para la captura de las señales de voz, se utilizó la aplicación móvil "MyRecorder", ya que permitía configurar la frecuencia de muestreo. Se estableció una frecuencia de 44 kHz, en cumplimiento del criterio de Nyquist, que indica que la frecuencia de muestreo debe ser al menos el doble de la frecuencia máxima. Dado que la banda audible del ser humano se encuentra aproximadamente entre 20 Hz y 20 kHz, se pusieron 44kHz. Posteriormente, se solicitó a tres hombres y tres mujeres que pronunciaran la misma frase. Las grabaciones fueron almacenadas inicialmente en formato MP4, luego se realizó la conversión a formato .WAV utilizando la plataforma en línea "FreeConvert", para poder subirlas al drive de Colab.  
@@ -17,6 +16,10 @@ Para la captura de las señales de voz, se utilizó la aplicación móvil "MyRec
 A continuación se va a mostrar la gráfica de cada grabación en dominio del tiempo y la Transformada de Fourier de cada señal con las respectivas gráficas de espectro de magnitudes frecuenciales.  
 
 ## Hombre 1:
+En cuanto a la adqision de la señal se cuenta con estos datos:
+![Imagen de WhatsApp 2025-10-06 a las 22 15 44_c9309c23](https://github.com/user-attachments/assets/30cfea44-1797-42d7-8fa6-aa46a1bd40f8)  
+Cabe destacar que el nivel de micrófono (mic level) o ganancia fue ajustado automáticamente por el sistema durante todas las grabaciones, sin posibilidad de configuración manual en la herramienta MyRecorder. Por tanto, no es posible conocer con precisión el valor aplicado en cada caso. Adicionalmente, las grabaciones se realizaron en un entorno no controlado, con presencia constante de ruido ambiental debido al tránsito de personas y sonidos externos, lo cual pudo afectar la calidad acústica de las señales y los datos obtenidos. Esta información aplica de igual forma para todas las grabaciones. 
+
 Para graficar en el dominio de tiempo inicialmente se normalizo la amplitud, dividiendo cada muestra por el valor máximo absoluto de la señal para escalar la señal entre –1 y 1, lo que permitió comparar grabaciones en igualdad de condiciones y se evitaron distorsiones visuales o numéricas, al normalizarla la ampiltud queda adimensional, lo que indica cuán grande o pequeña es una parte de la señal comparada con el resto de ella misma.  
 
        datos_audio = datos_audio / np.max(np.abs(datos_audio))    
@@ -98,6 +101,8 @@ Se midió el SNR para cada señal y para poder estimar la relación entre señal
 **Relación Señal/Ruido (SNR):** 8.05 dB  
 
 ## Hombre 2:  
+![Imagen de WhatsApp 2025-10-06 a las 22 16 01_a08de259](https://github.com/user-attachments/assets/2dcd7364-c6ce-4cba-a532-ec78fbc6c7b0)
+
 
 **Gráfica en el dominio tiempo**
 <img width="1021" height="393" alt="image" src="https://github.com/user-attachments/assets/ac71d54a-483c-4184-bca3-e89e52f59397" />
@@ -113,6 +118,8 @@ Se midió el SNR para cada señal y para poder estimar la relación entre señal
 
 
 ## Hombre 3:
+![Imagen de WhatsApp 2025-10-06 a las 22 16 19_c3f1fc3c](https://github.com/user-attachments/assets/cbf6d51f-71f7-4026-bd3f-f2a32f10a2f0)
+
 **Gráfica en el dominio tiempo**
 <img width="1021" height="393" alt="image" src="https://github.com/user-attachments/assets/323fb4c9-997b-4d93-b82b-22c8e107a75a" />
 
@@ -126,6 +133,8 @@ Se midió el SNR para cada señal y para poder estimar la relación entre señal
 
 
 ## Mujer 1:  
+![Imagen de WhatsApp 2025-10-06 a las 22 16 37_e7c08ff6](https://github.com/user-attachments/assets/65db78d4-053f-4bd1-a112-68607ecb33b4)  
+
 **Gráfica en el dominio tiempo**
 <img width="1021" height="393" alt="image" src="https://github.com/user-attachments/assets/73f94198-b428-415f-8620-dcfbf0871283" />
 
@@ -139,6 +148,8 @@ Se midió el SNR para cada señal y para poder estimar la relación entre señal
 
 
 ## Mujer 2:  
+![Imagen de WhatsApp 2025-10-06 a las 22 16 56_6987f4ae](https://github.com/user-attachments/assets/ff9fc276-3aa6-46bf-aa66-6d9897608523)
+
 **Gráfica en el dominio tiempo**
 <img width="1021" height="393" alt="image" src="https://github.com/user-attachments/assets/4835d52f-fe8b-47b6-a8d0-d2fe897b96c3" />
   
@@ -151,6 +162,8 @@ Se midió el SNR para cada señal y para poder estimar la relación entre señal
 **Relación Señal/Ruido (SNR):** 13.28 dB  
 
 ## Mujer 3:  
+![Imagen de WhatsApp 2025-10-06 a las 22 17 16_a224ae99](https://github.com/user-attachments/assets/67239958-88f3-4986-982e-992e85905c16)
+
 **Gráfica en el dominio tiempo**
 <img width="1021" height="393" alt="image" src="https://github.com/user-attachments/assets/fda830b0-441a-4b4c-a346-23ced04ef648" />
   
