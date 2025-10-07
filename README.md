@@ -168,6 +168,36 @@ Se midió el SNR para cada señal y para poder estimar la relación entre señal
 
 Una vez obtenidas las grabaciones de las seis señales de voz, se seleccionaron dos de ellas, una correspondiente a un participante masculino y otra a un participante femenino con el propósito de realizar un análisis más detallado. Sobre estas señales se aplicó un filtro pasa banda, con el objetivo de eliminar componentes de ruido y conservar únicamente las frecuencias características del rango vocal de cada género.
 
+
+    def bandpass_filter(signal, fs, lowcut, highcut, order=2):
+    signal = signal / np.max(np.abs(signal))
+    nyq = fs / 2
+    low = lowcut / nyq
+    high = highcut / nyq
+    sos = butter(order, [low, high], btype='band', output='sos')
+    return sosfiltfilt(sos, signal)
+
+
+    sig_h, fs_h = sf.read('/content/drive/MyDrive/Colab Notebooks/hombre 3.wav')
+    sig_m, fs_m = sf.read('/content/drive/MyDrive/Colab Notebooks/mujer 2.wav')
+
+
+    if sig_h.ndim > 1:
+    sig_h = sig_h.mean(axis=1)
+    if sig_m.ndim > 1:
+    sig_m = sig_m.mean(axis=1)
+
+
+    filtro_h = bandpass_filter(sig_h, fs_h, 80, 400)
+    filtro_m = bandpass_filter(sig_m, fs_m, 150, 500)
+
+
+El código implementado en Python permitió realizar todo el procesamiento descrito de manera estructurada. Se definió una función de filtrado pasa banda basada en la librería scipy.signal mediante el método de Butterworth en formato sos, garantizando estabilidad numérica. Además, se implementó una función auxiliar para extraer un fragmento central de duración controlada, con el fin de analizar un tramo representativo sin bordes ruidosos. Finalmente, las gráficas se generaron con matplotlib, permitiendo comparar visualmente las señales originales y filtradas, y evidenciar el efecto del preprocesamiento sobre las características espectrales de la voz.
+
+<img width="1189" height="789" alt="image" src="https://github.com/user-attachments/assets/8da9a113-850a-42d0-b5b4-113318ad9b15" />
+
+
+
 Jitter
 Shimmer
 Gráficas Jitter
