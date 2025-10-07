@@ -114,11 +114,11 @@ Se midió el SNR para cada señal y para poder estimar la relación entre señal
 
 **Transformada de Fourier y espectro de magnitudes frecuenciales.**
 <img width="1017" height="398" alt="image" src="https://github.com/user-attachments/assets/f9fd11aa-5da7-4749-9466-bad1a6accf36" />
-**Frecuencia fundamental:** 96.8 Hz
-**Frecuencia media:** 3657.5 Hz
-**Brillo espectral:** 0.4 
-**Energía total (intensidad):** 3792.482709
-**Relación Señal/Ruido (SNR):** 10.90 dB
+**Frecuencia fundamental:** 96.8 Hz  
+**Frecuencia media:** 3657.5 Hz  
+**Brillo espectral:** 0.4  
+**Energía total (intensidad):** 3792.482709  
+**Relación Señal/Ruido (SNR):** 10.90 dB  
 
 
 ## Mujer 1:  
@@ -167,9 +167,30 @@ Shimmer
 Gráficas Jitter
 Gráficas Shimmer
 
-### PARTE C – Comparación y conclusiones  
+### PARTE C – Comparación, análisis y conclusiones  
+Los datos obtenidos de las grabaciones de voz permitieron estudiar y comparar diferentes características entre hombres y mujeres. Para ello no solo se tuvieron en cuenta parámetros generales como la frecuencia fundamental, la frecuencia media, el brillo espectral, la intensidad y la relación señal/ruido, sino también medidas más específicas como el jitter y el shimmer, que reflejan la estabilidad de la voz en cuanto a frecuencia y amplitud. Con todos estos resultados es posible observar cómo varían las voces en términos de tono, claridad y regularidad, y así realizar una comparación más completa entre las muestras analizadas.  
+La **frecuencia fundamental (F₀)** fue consistentemente más baja en las voces masculinas (96.8 Hz, 144.3 Hz y 381.8 Hz en promedio entre 100 y 200 Hz) que en las voces femeninas (207.1 Hz, 219.9 Hz y 381.8 Hz, en un rango entre 200 y 400 Hz). Esto concuerda con la teoría acústica de la voz, donde los hombres presentan cuerdas vocales más largas y con mayor masa, lo que genera vibraciones más lentas y por ende tonos más graves. En contraste, las mujeres presentan frecuencias fundamentales más altas, lo que produce un tono más agudo y distintivo.  
 
-En este análisis comparativo entre voces masculinas y femeninas se evidenciaron diferencias claras en varios parámetros espectrales. En primer lugar, la frecuencia fundamental fue más baja en las voces masculinas, con valores que oscilaron entre 90 y 210 Hz, mientras que en las voces femeninas los valores estuvieron entre 200 y 420 Hz. Este resultado coincide con las diferencias fisiológicas entre hombres y mujeres, ya que las cuerdas vocales masculinas suelen ser más largas y gruesas, generando tonos más graves, mientras que en las femeninas son más cortas y delgadas, produciendo sonidos más agudos.
+**Brillo espectral:** Las voces femeninas tendieron a mostrar valores de brillo más altos (0.5 y 0.6), lo que indica una mayor presencia de energía en frecuencias altas, otorgando un timbre más claro y agudo. En contraste, los hombres se concentraron en valores de 0.4, reflejando un carácter más opaco o grave.  
+
+**Frecuencia media:** Las voces femeninas presentaron frecuencias medias notablemente más elevadas (5457.8 Hz y 4512.8 Hz en dos de los casos) en comparación con los hombres (entre 3600 Hz y 3800 Hz), lo que evidencia que gran parte de la energía vocal femenina se concentra en rangos más agudos.
+
+**Intensidad (energía total):** No se observó un patrón uniforme. En algunos casos, los hombres tuvieron mayor energía (ej. Hombre 2: 3712.9 frente a Mujer 1: 3198.7), mientras que en otros, una voz femenina superó ampliamente en intensidad (ej. Mujer 2 con 6496.2, la más alta de todas). Esto sugiere que la intensidad depende más del esfuerzo fonatorio y de la calidad de grabación que del género de la voz, probablemente por las condiciones que habían al grabar todas las personas hablaron en un tono más alto o bajo con la intención de que se escuchará mejor.  
+
+**Relación Señal/Ruido (SNR):** Hubo variabilidad en ambos géneros. Algunos hombres presentaron valores relativamente bajos (Hombre 3: 10.9 dB), mientras que una mujer obtuvo el mayor valor de SNR (Mujer 2: 13.28 dB), lo que refleja que este parámetro está más asociado a las condiciones de grabación y claridad de la señal que al timbre vocal en sí.  
+
+Las voces masculinas presentan frecuencias fundamentales más bajas y menor brillo espectral, lo que les otorga un timbre más grave y opaco. Las voces femeninas muestran frecuencias fundamentales y medias más altas, con mayor energía en los agudos, lo que produce un timbre más brillante y claro. La intensidad y la relación señal/ruido no dependen directamente del género, sino de factores como el esfuerzo fonatorio, la proyección vocal y las condiciones de la grabación.
+
+
+
+
+
+
+
+
+
+
+
 
 
 
