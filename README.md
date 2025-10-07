@@ -15,15 +15,15 @@ A continuación se va a mostrar la gráfica de cada grabación en dominio del ti
 ## Hombre 1:
 Para graficar en el dominio de tiempo inicialmente se normalizo la amplitud, dividiendo cada muestra por el valor máximo absoluto de la señal para escalar la señal entre –1 y 1, lo que permitió comparar grabaciones en igualdad de condiciones y se evitaron distorsiones visuales o numéricas, al normalizarla la ampiltud queda adimensional, lo que indica cuán grande o pequeña es una parte de la señal comparada con el resto de ella misma.  
 
-   datos_audio = datos_audio / np.max(np.abs(datos_audio))  
+       datos_audio = datos_audio / np.max(np.abs(datos_audio))    
 
-   plt.figure(figsize=(12,4))
-   plt.plot(tiempo, datos_audio, color='teal')
-   plt.title("Señal de voz en el dominio del tiempo")
-   plt.xlabel("Tiempo [s]")
-   plt.ylabel("Amplitud")
-   plt.grid(True)
-   plt.show()  
+       plt.figure(figsize=(12,4))  
+       plt.plot(tiempo, datos_audio, color='teal')  
+       plt.title("Señal de voz en el dominio del tiempo")  
+       plt.xlabel("Tiempo [s]")  
+       plt.ylabel("Amplitud")  
+       plt.grid(True)  
+       plt.show()  
 
 **Gráfica en el dominio tiempo** 
 
