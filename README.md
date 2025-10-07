@@ -13,6 +13,16 @@ Para la captura de las señales de voz, se utilizó la aplicación móvil "MyRec
 A continuación se va a mostrar la gráfica de cada grabación en dominio del tiempo y la Transformada de Fourier de cada señal con las respectivas gráficas de espectro de magnitudes frecuenciales.  
 
 ## Hombre 1:
+Para graficar en el dominio de tiempo inicialmente se normalizo la amplitud
+
+   plt.figure(figsize=(12,4))
+   plt.plot(tiempo, datos_audio, color='teal')
+   plt.title("Señal de voz en el dominio del tiempo")
+   plt.xlabel("Tiempo [s]")
+   plt.ylabel("Amplitud")
+   plt.grid(True)
+   plt.show()
+
 **Gráfica en el dominio tiempo** 
 
 <img width="1021" height="393" alt="image" src="https://github.com/user-attachments/assets/9a793506-c952-44d4-83a4-b41b4dfdcafe" />
