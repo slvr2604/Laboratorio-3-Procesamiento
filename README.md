@@ -65,7 +65,7 @@ La **frecuencia media** es un parámetro que se calcula tomando en cuenta cuánt
     
 **Frecuencia media:** 4512.8 Hz  
 
-El**brillo espectral** es un parámetro que mide cuánta energía hay en las frecuencias altas respecto al total, lo cual resulta útil en el análisis de voz para evaluar qué tan clara, aguda o “brillante” suena una grabación. Su cálculo se basa en la proporción de energía ubicada por encima de un umbral de frecuencia, que en este caso se fijó en 2000 Hz. Según estudios acústicos, dicho umbral puede variar entre 1500 y 3000 Hz dependiendo del tipo de voz y el objetivo fonético del análisis. Dado que en este estudio se incluyeron voces masculinas y femeninas, se adoptó el valor de 2000 Hz como referencia intermedia. Un valor alto de brillo (cercano a 1) indica una voz clara y aguda, con predominancia de frecuencias altas, común en voces femeninas o infantiles; mientras que un valor bajo (cercano a 0) refleja una voz más grave u opaca, con mayor concentración de energía en frecuencias bajas, como suele observarse en voces masculinas o roncas.  
+El **brillo espectral** es un parámetro que mide cuánta energía hay en las frecuencias altas respecto al total, lo cual resulta útil en el análisis de voz para evaluar qué tan clara, aguda o “brillante” suena una grabación. Su cálculo se basa en la proporción de energía ubicada por encima de un umbral de frecuencia, que en este caso se fijó en 2000 Hz. Según estudios acústicos, dicho umbral puede variar entre 1500 y 3000 Hz dependiendo del tipo de voz y el objetivo fonético del análisis. Dado que en este estudio se incluyeron voces masculinas y femeninas, se adoptó el valor de 2000 Hz como referencia intermedia. Un valor alto de brillo (cercano a 1) indica una voz clara y aguda, con predominancia de frecuencias altas, común en voces femeninas o infantiles; mientras que un valor bajo (cercano a 0) refleja una voz más grave u opaca, con mayor concentración de energía en frecuencias bajas, como suele observarse en voces masculinas o roncas.  
 
 En resumen, si el valor es alto (por ejemplo, 0.6 o más), decimos que la señal es “brillante”. Si es bajo (0.2 o menos), la señal es más grave o apagada.  
 
@@ -91,19 +91,20 @@ Se midió el SNR para cada señal y para poder estimar la relación entre señal
     energia_ruido = np.sum(parte_ruido **2)
     SNR_dB = 10 * np.log10(energia_senal / energia_ruido)  
     
-**Relación Señal/Ruido (SNR):** 8.05 dB
+**Relación Señal/Ruido (SNR):** 8.05 dB  
 
+## Hombre 2:  
 
-
-
-
-
-## Hombre 2:
 **Gráfica en el dominio tiempo**
 <img width="1021" height="393" alt="image" src="https://github.com/user-attachments/assets/ac71d54a-483c-4184-bca3-e89e52f59397" />
 
 **Transformada de Fourier y espectro de magnitudes frecuenciales.**
 <img width="1017" height="398" alt="image" src="https://github.com/user-attachments/assets/8de920a7-01ff-4d00-9d7b-abf1cb916b93" />
+**Frecuencia fundamental:** 144.3 Hz  
+**Frecuencia media:** 3604.4 Hz  
+**Brillo espectral:** 0.4   
+**Energía total (intensidad):** 3712.911768  
+**Relación Señal/Ruido (SNR):** 12.23 dB  
 
 
 
@@ -113,7 +114,11 @@ Se midió el SNR para cada señal y para poder estimar la relación entre señal
 
 **Transformada de Fourier y espectro de magnitudes frecuenciales.**
 <img width="1017" height="398" alt="image" src="https://github.com/user-attachments/assets/f9fd11aa-5da7-4749-9466-bad1a6accf36" />
-
+**Frecuencia fundamental:** 96.8 Hz
+**Frecuencia media:** 3657.5 Hz
+**Brillo espectral:** 0.4 
+**Energía total (intensidad):** 3792.482709
+**Relación Señal/Ruido (SNR):** 10.90 dB
 
 
 ## Mujer 1:  
@@ -122,6 +127,11 @@ Se midió el SNR para cada señal y para poder estimar la relación entre señal
 
 **Transformada de Fourier y espectro de magnitudes frecuenciales.**
 <img width="1017" height="398" alt="image" src="https://github.com/user-attachments/assets/019b626d-f5e1-46c4-8748-74911d23c72f" />
+**Frecuencia fundamental:** 219.9 Hz
+**Frecuencia media:** 5457.8 Hz
+**Brillo espectral:** 0.6 
+**Energía total (intensidad):** 3198.715156
+**Relación Señal/Ruido (SNR):** 11.76 dB
 
 
 ## Mujer 2:  
@@ -130,7 +140,11 @@ Se midió el SNR para cada señal y para poder estimar la relación entre señal
   
 **Transformada de Fourier y espectro de magnitudes frecuenciales.**
 <img width="1017" height="398" alt="image" src="https://github.com/user-attachments/assets/1c0311e4-697e-49b8-b8ac-2697821cd696" />
-
+**Frecuencia fundamental:** 207.1 Hz  
+**Frecuencia media:** 2804.6 Hz  
+**Brillo espectral:** 0.3   
+**Energía total (intensidad):** 6496.236422  
+**Relación Señal/Ruido (SNR):** 13.28 dB  
 
 ## Mujer 3:  
 **Gráfica en el dominio tiempo**
@@ -139,6 +153,11 @@ Se midió el SNR para cada señal y para poder estimar la relación entre señal
 **Transformada de Fourier y espectro de magnitudes frecuenciales.**
 <img width="1017" height="398" alt="image" src="https://github.com/user-attachments/assets/ce257db0-1abc-42d8-bdfe-34958e770411" />
 
+**Frecuencia fundamental:** 381.8 Hz  
+**Frecuencia media:** 4512.8 Hz  
+**Brillo espectral:** 0.5   
+**Energía total (intensidad):** 2392.245868  
+**Relación Señal/Ruido (SNR):** 8.05 dB  
 
 
 
