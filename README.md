@@ -257,6 +257,9 @@ Las diferencias observadas entre individuos y géneros pueden deberse a factores
 
 ### PARTE C – Comparación, análisis y conclusiones  
 Los datos obtenidos de las grabaciones de voz permitieron estudiar y comparar diferentes características entre hombres y mujeres. Para ello no solo se tuvieron en cuenta parámetros generales como la frecuencia fundamental, la frecuencia media, el brillo espectral, la intensidad y la relación señal/ruido, sino también medidas más específicas como el jitter y el shimmer, que reflejan la estabilidad de la voz en cuanto a frecuencia y amplitud. Con todos estos resultados es posible observar cómo varían las voces en términos de tono, claridad y regularidad, y así realizar una comparación más completa entre las muestras analizadas.  
+![Uploading image.png…]()
+
+
 La **frecuencia fundamental (F₀)** fue consistentemente más baja en las voces masculinas (96.8 Hz, 144.3 Hz y 381.8 Hz en promedio entre 100 y 200 Hz) que en las voces femeninas (207.1 Hz, 219.9 Hz y 381.8 Hz, en un rango entre 200 y 400 Hz). Esto concuerda con la teoría acústica de la voz, donde los hombres presentan cuerdas vocales más largas y con mayor masa, lo que genera vibraciones más lentas y por ende tonos más graves. En contraste, las mujeres presentan frecuencias fundamentales más altas, lo que produce un tono más agudo y distintivo.  
 
 **Brillo espectral:** Las voces femeninas tendieron a mostrar valores de brillo más altos (0.5 y 0.6), lo que indica una mayor presencia de energía en frecuencias altas, otorgando un timbre más claro y agudo. En contraste, los hombres se concentraron en valores de 0.4, reflejando un carácter más opaco o grave.  
