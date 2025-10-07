@@ -216,8 +216,8 @@ Luego  se implementó un código en Colab que permite automatizar el cálculo de
 
    
     peaks, _ = find_peaks(voz, height=0, distance=fs//200)
-    periodos = np.diff(peaks) / fs       # tiempo entre picos
-    amplitudes = voz[peaks]              # amplitudes de los picos
+    periodos = np.diff(peaks) / fs       
+    amplitudes = voz[peaks]             
 
   
     jitter_val = np.mean(np.abs(np.diff(periodos))) / np.mean(periodos) * 100
