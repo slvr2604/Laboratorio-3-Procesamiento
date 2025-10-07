@@ -62,7 +62,13 @@ En resumen, si el valor es alto (por ejemplo, 0.6 o más), decimos que la señal
 
 **Brillo espectral:** 0.5  
 
-La **intensidad** 
+La **intensidad** es un parámetro que representa la cantidad total de energía contenida en una señal. En el análisis de voz, permite estimar qué tan fuerte o potente es una grabación, y puede relacionarse con el esfuerzo fonatorio, la proyección vocal o la presencia de ruido. Este valor no tiene unidades absolutas si se trabaja con señales normalizadas, pero permite comparar entre grabaciones. Por ejemplo, una voz con mayor energía puede indicar mayor volumen, mejor proyección o menor pérdida de señal; se calcula como la suma de las magnitudes del espectro de Fourier:  
+
+    datos_audio = datos_audio / np.max(np.abs(datos_audio))
+    energia_total = np.sum(datos_audio**2)  
+
+**Energía total (intensidad):** 2392.245868  
+
 
 
 
